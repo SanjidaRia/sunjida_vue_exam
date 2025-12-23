@@ -20,18 +20,7 @@ export default defineConfig((/* ctx */) => {
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
-    extras: [
-      // 'ionicons-v4',
-      // 'mdi-v7',
-      // 'fontawesome-v6',
-      // 'eva-icons',
-      // 'themify',
-      // 'line-awesome',
-      // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
-
-      'roboto-font', // optional, you are not bound to it
-      'material-icons', // optional, you are not bound to it
-    ],
+    extras:,
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
     build: {
@@ -59,14 +48,12 @@ export default defineConfig((/* ctx */) => {
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
       
-      vitePlugins: [
-        ['vite-plugin-checker', {
+      vitePlugins: ['vite-plugin-checker', {
           eslint: {
-            lintCommand: 'eslint -c ./eslint.config.js "./src*/**/*.{js,mjs,cjs,vue}"',
+            lintCommand: 'eslint -c./eslint.config.js "./src*/**/*.{js,mjs,cjs,vue}"',
             useFlatConfig: true
           }
         }, { server: false }]
-      ]
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#devserver
@@ -77,7 +64,10 @@ export default defineConfig((/* ctx */) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
     framework: {
-      config: {},
+      config: {
+        // Optional: you can set the default theme here
+        // dark: 'auto' 
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
@@ -86,16 +76,16 @@ export default defineConfig((/* ctx */) => {
       // (like functional components as one of the examples),
       // you can manually specify Quasar components/directives to be available everywhere:
       //
-      // components: [],
-      // directives: [],
+      // components:,
+      // directives:,
 
-      // Quasar plugins
-      plugins: []
+      // Quasar plugins - ENABLED FOR PERSISTENCE AND NOTIFICATIONS
+      plugins:
     },
 
     // animations: 'all', // --- includes all animations
     // https://v2.quasar.dev/options/animations
-    animations: [],
+    animations:,
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#sourcefiles
     // sourceFiles: {
@@ -182,7 +172,7 @@ export default defineConfig((/* ctx */) => {
         // protocol: 'myapp://path',
 
         // Windows only
-        // win32metadata: { ... }
+        // win32metadata: {... }
       },
 
       builder: {
@@ -205,7 +195,7 @@ export default defineConfig((/* ctx */) => {
        *
        * @example [ 'my-script.ts', 'sub-folder/my-other-script.js' ]
        */
-      extraScripts: []
+      extraScripts:
     }
   }
 })
